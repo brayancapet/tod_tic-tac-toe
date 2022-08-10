@@ -9,38 +9,102 @@ let nom1 = 'Joueur 1';
 let nom2 = 'Joueur 2';
 let isInput = false;
 
+const gameFlow = (() => {
+    let count = 0;
+
+    const implementCount = () => {
+        count ++;
+        return count;
+    }
+
+    const resetCount = () => {
+        count = 0;
+        return count;
+    }
+    return { implementCount, resetCount };
+})();
+
+
+
 const gameboard = (() => {
-
-    // Template for when my content switch from a paragraph to an input 
-    const active_input = `
-        <div>
-            <input type="text" value="Joueur invité" class="input-name">
-            <button type="button" class="input-button">renommer</button>
-        </div>
-    `;
-
-    // Template for when my content switch from an input to a paragraph
-    const inactive_input = `<div><p id="top1">Joueur invité</p> <i class="fa-solid fa-pen-to-square"></i></div>`;
-
-    // Function that is supposed to change the content of my container according to the value of isInput
-    const name_container_switch = (element) => {
-        isInput == false ? element.innerHTML = active_input : element.innerHTML = inactive_input;
-    };
 
     // Function that build my gameboard
     const build = () => {
+        console.log('build function used');
         grid.innerHTML = '';
         for(let i = 0; i < 9; i++){
             let div = document.createElement('div');
-            div.classList.add(`cell${i}`);
+            div.textContent = "";
+            div.classList.add('cell',`cell${i}`);
             grid.appendChild(div);
+            items.push(div);
         }
+        gameboard.querySelector();
     };
 
-    return { build, name_container_switch };
+    const reset = () => {
+        console.log('reset function used');
+        items = [];
+        console.log('items array : (need to be empty) : ' + items);
+        gameboard.build();
+        gameFlow.resetCount;
+
+    };
+
+    let items = [];
+
+    const querySelector = () => {
+        console.log('querySelector function used');
+        const cell = document.querySelectorAll('.cell');
+        for(let c of cell){
+            c.addEventListener('click', function(){
+                c.textContent !== "" ? console.log('not empty') : gameFlow.implementCount() % 2 == 0 ? c.textContent = 'X' : c.textContent = 'O';
+                gameboard.winningCombination();
+            });
+        }
+
+    }
+
+    const winningCombination = () => {
+        console.log('winningCombination used');
+        let winning  = [
+            [items[0].textContent, items[1].textContent, items[2].textContent],
+            [items[3].textContent, items[4].textContent, items[5].textContent],
+            [items[6].textContent, items[7].textContent, items[8].textContent],
+            [items[0].textContent, items[3].textContent, items[6].textContent],
+            [items[1].textContent, items[4].textContent, items[7].textContent],
+            [items[2].textContent, items[5].textContent, items[8].textContent],
+            [items[0].textContent, items[4].textContent, items[8].textContent],
+            [items[2].textContent, items[4].textContent, items[6].textContent]
+        ];
+
+        console.log(winning[0][0], winning[0][1], winning[0][2]);
+
+        /* for(let win of winning){
+            if(win[0] !== "" && win[1] !== "" && win[2] !== ""){
+                if(win[0] === win[1] && win[1] === win[2]){
+                    alert('winner');
+                }
+            }
+            else {
+                console.log('keep playing, to get a winner');
+            }
+        } */
+        
+    };
+
+    const getValue = element => {
+        console.log('get value function used');
+        let value = element.innerHTML;
+        return value;
+    };
+
+    return { build, winningCombination, querySelector, getValue, reset };
 })();
 gameboard.build();
-edit_icon.addEventListener('click', gameboard.name_container_switch(top1));
+
+
+
 
 const Player = (name_var, name) => {
     name_var = name;
@@ -52,7 +116,4 @@ const Player = (name_var, name) => {
     return { sayName };
 };
 
-const player1 = Player(nom1, 'player1');
-const player2 = Player(nom2, 'player2');
-player1.sayName();
-player2.sayName();
+restart_button.addEventListener('click', gameboard.reset);
