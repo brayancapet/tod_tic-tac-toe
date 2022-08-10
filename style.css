@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -5,7 +7,165 @@
 
 body {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     background-color: #25242a;
     color: #ddd;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    font-family: 'Sora', sans-serif;
 }
+
+body > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right, .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right > div, .left > div {
+    width: 100%;
+    height: 30%;
+    font-size: 1.8rem;
+    color: #25242a;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right > div + div, .left > div + div {
+    height: 70%;
+    background-color: #25242a;
+}
+
+.score-board-container {
+    height: 50%;
+    width: 80%;
+    background-color: #ddd;
+    color: #25242a;
+    border-radius: 0.375rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 2px #ccc;
+}
+
+.player-name{
+    height: 30%;
+    width: 100%;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.player-score{
+    height: 70%;
+    width: 100%;
+    font-size: 6.5rem;
+    font-weight: 700;
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #660600;
+}
+
+.top1 > div, .top2 > div {
+    height: 100%;
+    width: 100%;
+    background-color: #ddd;
+    color: #25242a;
+    border-radius: 0.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top1 > div > i, .top2 > div > i {
+    padding-left: 8px;
+    cursor: pointer;
+    color: #660600;
+}
+
+.center {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.center > div {
+    width: 85%;
+    height: 85%;
+    border-radius: 0.375rem;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#center-container > div{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#center-container > div + div {
+    height: 20%;
+}
+
+.restart-button {
+    height: 40%;
+    width: 50%;
+    border-radius: 0.375rem;
+    background-color: #25242a;
+    color: #ddd;
+    font: inherit;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    outline: none;
+}
+.restart-button:hover {
+    color: #660600;
+    border: 1px solid #660600;
+}
+
+.grid{
+    height: 80%;
+    width: 80%;
+    background-color: #25242a;
+    border-radius: 0.375rem;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(3, 33.33%);
+}
+
+.grid > div {
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+    font: inherit;
+    font-size: 3.5rem;
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.grid > div:hover {
+    transform: scale(1.03);
+    background-color: #660600;
+}
+
