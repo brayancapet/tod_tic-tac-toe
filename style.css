@@ -169,3 +169,140 @@ body > div {
     background-color: #660600;
 }
 
+.winning-screen-container, .choose-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winning-screen-container > div, .choose-name > div {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winning-screen-content {
+    height: 60%;
+    width: 60%;
+    background-color: #ddd;
+    color: #25242a;
+    border-radius: 0.275rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.winning-screen-content > p + p {
+    font-size: 1.4rem;
+    padding-top: 2%;
+}
+
+.winning-screen-content > button {
+    height: 10%;
+    width: 30%;
+    border-radius: 0.275rem;
+    background-color: #660600;
+    color: #ddd;
+    cursor: pointer;
+    font: inherit;
+    margin-top: 3%;
+    font-size: 1.3rem;
+}
+
+.player-input{
+    height: 20%;
+    border-radius: 0.375rem 0 0 0.375rem;
+    border: none;
+    font: inherit;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.player-button {
+    height: 23%;
+    width: 15%;
+    border-radius: 0 0.375rem 0.375rem 0;
+    border: none;
+    background-color: #660600;
+    color: #ddd;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1rem;
+}
+
+.choose-name-content {
+    height: 60%;
+    width: 60%;
+    background-color: #ddd;
+    color: #25242a;
+    border-radius: 0.275rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80% 20%;
+}
+
+.joueur1 {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.joueur1 > p {
+    font-size: 1.8rem;
+    color: rgba(102,6,0, 0.7);
+}
+.joueur1 > input, .joueur2 > input {
+    height: 30px;
+    width: 30%;
+    font: inherit;
+    border-radius: 0.375rem;
+    padding: 4px;
+    border: none;
+    font-size: 1.3rem;
+}
+
+.joueur2 {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(102,6,0, 0.7);
+    
+}
+
+.joueur2 > p {
+    font-size: 1.8rem;
+    color: #ddd;
+}
+
+.name-button-container {
+    grid-area: 2 / 1 / 3 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name-button-container > button {
+    height: 50%;
+    width: 30%;
+    border-radius: 0.375rem;
+    background-color: #fff;
+    color: #25242a;
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+}

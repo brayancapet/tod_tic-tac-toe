@@ -9,11 +9,45 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
+
+    <!-- Winning screen container that which currently have display none, and will switch to display block one a player wins -->
+    <div class="winning-screen-container">
+        <div>
+            <div class="winning-screen-content">
+                <p>Nous avons un gagnant !</p>
+                <p>Bien joué, <span style="color: #660600;">Brayan</span>, tu as remporté la partie </p>
+                <button type="button" class="rejouer">Rejouer</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose-name">
+        <div>
+            <div class="choose-name-content">
+                
+                <div class="joueur1">
+                    <p id="nom1">Joueur 1</p>
+                    <input type="text" class="input-name1" value="Joueur 1">
+                </div>
+                <div class="joueur2">
+                    <p id="nom2">Joueur 2</p>
+                    <input type="text" class="input-name2" value="Joueur 2">
+                </div>
+                <div class="name-button-container">
+                    <button type="button" class="name-button">C'est parti</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     
+    <!-- Left section with player 1 name and score -->
     <div class="left">
         <div class="top1" >
-            <div><p id="top1">Joueur 1</p> <i class="fa-solid fa-pen-to-square"></i></div>
-
+            <div>
+                <p id="top1">Joueur 1</p>
+            </div>
+            
         </div>
         <div class="bottom">
             <div class="score-board-container">
@@ -24,7 +58,7 @@
     </div>
 
 
-
+    <!-- Center section wth my gameboard and my reset button -->
     <div class="center">
         <div id="center-container">
             <div>
@@ -38,9 +72,12 @@
         </div>
     </div>
 
+    <!-- Right section with player 2 name and score -->
     <div class="right">
         <div class="top2">
-            <div><p id="top2">Joueur 2</p>  <i class="fa-solid fa-pen-to-square"></i></div>
+            <div id="top2">
+                <div><p id="top2">Joueur 2</p></div>
+            </div>
         </div>
         <div class="bottom">
             <div class="score-board-container">
