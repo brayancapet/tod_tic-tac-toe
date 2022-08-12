@@ -295,7 +295,7 @@ body > div {
     justify-content: center;
     align-items: center;
 }
-.name-button-container > button {
+.name-button-container > button, .revenge {
     height: 50%;
     width: 30%;
     border-radius: 0.375rem;
